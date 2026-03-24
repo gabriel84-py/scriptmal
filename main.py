@@ -132,10 +132,9 @@ credentials = {
 
 def main():
     ip = generer_ip()
-    print(ip)
-    result = scan_ports(ip)
-    print(result)  # ex : {'ip': '192.168.1.1', 22: True, 23: False}
+    result = scan_ports(ip)  # ex : {'ip': '192.168.1.1', 22: True, 23: False}
     if result:
+        print(result)
         with open("hey.txt", "a") as f:
             f.write(f"{result}\n")
         if result[23]:
