@@ -140,7 +140,7 @@ def main():
         if result[23]:
             for username in credentials:
                 password = credentials[username]
-                telnet_is = check_telnet(ip, 22, username, password)
+                telnet_is = check_telnet(ip, 23, username, password)
                 if telnet_is:
                     print(f'telnet ok for {ip} avec username = {username} et password = {password}')
                     with open("hey.txt", "a") as f:
