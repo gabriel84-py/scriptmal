@@ -8,7 +8,7 @@ import telnetlib
 
 
 def scan_ports(ip):
-    ports = [22, 23]
+    ports = [23]
     result = {"ip": ip}
 
     open_found = False
@@ -136,14 +136,6 @@ def main():
     result = scan_ports(ip)
     print(result)  # ex : {'ip': '192.168.1.1', 22: True, 23: False}
     if result:
-        if result[22]:
-            for username in credentials:
-                password = credentials[username]
-                ssh_is = check_ssh(ip, 22, username, password)
-                if ssh_is:
-                    print(f'ssh ok for {ip} avec username = {username} et password = {password}')
-                    with open("hey.txt", "w") as f:
-                        f.write(f"ssh ok for {ip} avec username = {username} et password = {password}\n")
         if result[23]:
             for username in credentials:
                 password = credentials[username]
