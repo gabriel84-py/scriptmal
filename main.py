@@ -136,7 +136,7 @@ def main():
     result = scan_ports(ip)
     print(result)  # ex : {'ip': '192.168.1.1', 22: True, 23: False}
     if result:
-        with open("hey.txt", "w") as f:
+        with open("hey.txt", "a") as f:
             f.write(f"{result}\n")
         if result[23]:
             for username in credentials:
@@ -144,7 +144,7 @@ def main():
                 telnet_is = check_telnet(ip, 22, username, password)
                 if telnet_is:
                     print(f'telnet ok for {ip} avec username = {username} et password = {password}')
-                    with open("hey.txt", "w") as f:
+                    with open("hey.txt", "a") as f:
                         f.write(f"telnet ok for {ip} avec username = {username} et password = {password}\n")
 
 
