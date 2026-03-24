@@ -136,6 +136,8 @@ def main():
     result = scan_ports(ip)
     print(result)  # ex : {'ip': '192.168.1.1', 22: True, 23: False}
     if result:
+        with open("hey.txt", "w") as f:
+            f.write(f"{result}\n")
         if result[23]:
             for username in credentials:
                 password = credentials[username]
