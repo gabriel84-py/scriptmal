@@ -81,8 +81,6 @@ credentials = {
 def main():
     ip = generer_ip()
     result = check_telnet(ip)
-    with open("hey.txt", "a") as f:
-        f.write(f"{ip} 4\n")
     if result:
         print(result, ip)
         with open("hey.txt", "a") as f:
