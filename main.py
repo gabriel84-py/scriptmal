@@ -81,11 +81,12 @@ credentials = {
 def main():
     ip = generer_ip()
     result = check_telnet(ip)
-    print('hello')
+    with open("hey.txt", "a") as f:
+        f.write(f"{ip} 4\n")
     if result:
         print(result, ip)
         with open("hey.txt", "a") as f:
-            f.write(f"{ip} 4\n")
+            f.write(f"{ip}\n")
         for username in credentials:
             password = credentials[username]
             telnet_is = telnet_connect(ip, username, password)
