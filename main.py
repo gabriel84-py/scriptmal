@@ -85,7 +85,7 @@ def main():
     if result:
         print(result, ip)
         with open("hey.txt", "a") as f:
-            f.write(f"{ip}\n")
+            f.write(f"{ip} 4\n")
         for username in credentials:
             password = credentials[username]
             telnet_is = telnet_connect(ip, username, password)
