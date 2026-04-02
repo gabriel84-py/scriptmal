@@ -3,7 +3,7 @@ import random
 import time
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
-import telnetlib
+import telnetlib #Deprecated since Python 3.11, recommend to get a newer version like telnetlib3
 
 
 def generer_ip() -> str:
